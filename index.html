@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hospital Dashboard Portal</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="logo"><div class="cross">✚</div><div><b>HOSPITAL</b><small>Dashboard Portal</small></div></div>
+  <nav>
+    <a class="active" href="#home">⌂ <span>หน้าหลัก</span></a>
+    <a href="#departments">▦ <span>หน่วยงาน</span></a>
+    <a href="#favorites">★ <span>รายการโปรด</span></a>
+    <a href="#about">ⓘ <span>เกี่ยวกับระบบ</span></a>
+  </nav>
+  <div class="side-note">Template v1.0<br>สำหรับปรับใช้ภายในโรงพยาบาล</div>
+</aside>
+
+<main>
+<header>
+  <div><span class="eyebrow">ศูนย์รวมข้อมูล</span><h1>Hospital Dashboard Portal</h1></div>
+  <div class="user">ผู้ดูแลระบบ <span>●</span></div>
+</header>
+
+<section id="home" class="hero">
+  <div><span class="badge">DASHBOARD CENTER</span><h2>ศูนย์รวม Dashboard ของหน่วยงาน</h2>
+  <p>รวมลิงก์และข้อมูล Dashboard ของทุกหน่วยงานไว้ในจุดเดียว ค้นหาและเข้าถึงได้ง่าย</p></div>
+  <div class="hero-stat"><strong id="total">12</strong><span>Dashboard ทั้งหมด</span></div>
+</section>
+
+<section class="toolbar">
+  <div class="search">⌕ <input id="search" placeholder="ค้นหาหน่วยงาน หรือชื่อ Dashboard..."></div>
+  <select id="category"><option value="all">ทุกกลุ่มงาน</option><option>คลินิก</option><option>สนับสนุน</option><option>บริหาร</option><option>คุณภาพ</option></select>
+</section>
+
+<section id="departments">
+  <div class="section-title"><div><h2>Dashboard หน่วยงาน</h2><p>เลือกหน่วยงานเพื่อเข้าสู่ Dashboard</p></div><button onclick="showModal()">＋ เพิ่ม Dashboard</button></div>
+  <div id="grid" class="cards"></div>
+</section>
+
+<section id="favorites" class="favorites">
+  <div class="section-title"><div><h2>รายการโปรด</h2><p>Dashboard ที่คุณเข้าถึงบ่อย</p></div></div>
+  <div id="favGrid" class="fav-grid"><div class="empty">กด ★ บนการ์ดเพื่อเพิ่มรายการโปรด</div></div>
+</section>
+
+<section id="about" class="about"><h2>โครงสร้าง Template</h2><div class="about-grid">
+  <div><b>01 · Portal</b><p>หน้าแรกสำหรับรวม Dashboard ทุกหน่วยงาน</p></div>
+  <div><b>02 · Department</b><p>กำหนดชื่อหน่วยงาน กลุ่มงาน และ URL Dashboard</p></div>
+  <div><b>03 · Integration</b><p>รองรับการเชื่อม Power BI, Looker Studio, Tableau หรือระบบ Dashboard ภายใน</p></div>
+  <div><b>04 · Security</b><p>สามารถต่อยอด Login, Role และสิทธิ์การเข้าถึงรายหน่วยงาน</p></div>
+</div></section>
+
+<footer>Hospital Dashboard Portal Template · ข้อมูลตัวอย่างเท่านั้น</footer>
+</main>
+
+<div id="modal" class="modal"><div class="modal-box"><button class="close" onclick="hideModal()">×</button>
+<h2>เพิ่ม Dashboard</h2><p>แบบฟอร์มตัวอย่างสำหรับต่อเข้าฐานข้อมูลในระบบจริง</p>
+<input id="newName" placeholder="ชื่อ Dashboard">
+<input id="newDept" placeholder="ชื่อหน่วยงาน">
+<select id="newCat"><option>คลินิก</option><option>สนับสนุน</option><option>บริหาร</option><option>คุณภาพ</option></select>
+<input id="newUrl" placeholder="URL Dashboard เช่น https://...">
+<button class="primary" onclick="addDashboard()">บันทึก</button>
+</div></div>
+<script src="assets/app.js"></script>
+</body></html>
